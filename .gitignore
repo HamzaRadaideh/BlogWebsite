@@ -1,0 +1,33 @@
+# Node modules (if using a package manager)
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Dependency directories
+bower_components/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# Compiled files
+*.class
+*.exe
+*.dll
+
+# Miscellaneous
+*.bak
+*.tmp
