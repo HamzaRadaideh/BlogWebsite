@@ -17,32 +17,31 @@ $(document).ready(function () {
     });
 })
 
-// Header Background Change on Scroll
-let header = document.querySelector('header');
-window.addEventListener('scroll', function () {
-    header.classList.toggle('shadow', window.scrollY > 0);
+// Header background change on scroll
+const header = $('header');
+$(window).scroll(function () {
+    header.toggleClass('shadow', $(this).scrollTop() > 0);
 });
 
-const wrapper = document.querySelector('.wrapper');
-const registerLink = document.querySelector('.register-link');
-const loginLink = document.querySelector('.login-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
-const iconClose = document.querySelector('.icon-close');
+// Popup and form toggle functionality
+const wrapper = $('.wrapper');
+const body = $('body');
 
+$('.register-link').click(function () {
+    wrapper.addClass('active');
+});
 
-registerLink.onclick = () => {
-    wrapper.classList.add('active');
-};
+$('.login-link').click(function () {
+    wrapper.removeClass('active');
+});
 
-loginLink.onclick = () => {
-    wrapper.classList.remove('active');
-};
+$('.btnLogin-popup').click(function () {
+    wrapper.addClass('active-popup');
+    body.css('overflow', 'hidden');
+    $(window).scrollTop(0);
+});
 
-btnPopup.onclick = () => {
-    wrapper.classList.add('active-popup');
-};
-
-iconClose.onclick = () => {
-    wrapper.classList.remove('active-popup');
-    wrapper.classList.remove('active');
-};
+$('.icon-close').click(function () {
+    wrapper.removeClass('active active-popup');
+    body.css('overflow', 'auto');
+});
