@@ -86,7 +86,10 @@ header.shadow .logo {
     color: var(--secound-color);
 }
 
-.login {
+/* Login & Register */
+
+.btnLogin-popup {
+    position: relative;
     padding: 8px 14px;
     text-transform: uppercase;
     font-weight: 500;
@@ -94,19 +97,270 @@ header.shadow .logo {
     font-size: 1rem;
     color: var(--text-color);
     background-color: var(--secound-color);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
-.login:hover {
+.btnLogin-popup::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: 0.85;
+}
+
+.btnLogin-popup:hover {
     background-color: hsl(24, 98%, 58%);
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(25px);
+    box-shadow: -1px 0 10px rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color: #333;
+    cursor: pointer;
+}
+
+.wrapper .logreg-box {
+    width: 100%;
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+
+.wrapper .form-box.register {
+    display: none;
+}
+
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.logreg-box .logreg-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.logreg-title h3 {
+    font-size: 32px;
+}
+
+.logreg-title p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    padding-right: 25px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: #fff;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.logreg-box .remember-forget {
+    font-size: 14.5px;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forget label input {
+    color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+.logreg-box .log-btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 15px;
+
+}
+
+.logreg-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.media-options {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.media-options a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.media-options a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.media-options a i {
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+
+.media-options a span {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 /* Home */
@@ -208,7 +462,6 @@ header.shadow .logo {
     /* to remain title in 2 lines */
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -228,7 +481,6 @@ header.shadow .logo {
     /* to remain title in 3 lines */
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

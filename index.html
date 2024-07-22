@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,8 @@
     <!-- Link to CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Link to Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha384-2mL6V93O8qH/u4E42v7j6L8YcQ2v7V/U36yJ3hOFu9/jG3pFo=" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-2mL6V93O8qH/u4E42v7j6L8YcQ2v7V/U36yJ3hOFu9/jG3pFo=" crossorigin="anonymous"> -->
     <!-- Link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,17 +34,107 @@
             </h1>
 
             <!-- login btn -->
-            <a type="#" class="login">Login</a>
+            <button class="btnLogin-popup">Login</button>
         </div>
 
     </header>
-    <!-- Home -->
 
+    <div class="wrapper">
+
+        <span class="icon-close">
+            <i class='bx bx-x'></i>
+        </span>
+
+        <div class="logreg-box">
+            <!-- login form -->
+            <div class="form-box login">
+                <div class="logreg-title">
+                    <h3>login</h3>
+                    <p>Please login to use the platform</p>
+                </div>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-envelope'></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-lock'></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+                        <a href="#"> Forget password</a>
+                    </div>
+                    <button type="submit" class="log-btn">Login</button>
+                    <div class="logreg-link">
+                        <p>Don't have an account yet? <a href="#" class="register-link">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- register form -->
+            <div class="form-box register">
+                <div class="logreg-title">
+                    <h3>Registration</h3>
+                    <p>Please provide the following to verify your identity</p>
+                </div>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-user'></i></span>
+                        <input type="text" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-envelope'></i></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-lock'></i></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">
+                            I agree to the terms & conditions
+                        </label>
+                    </div>
+                    <button type="submit" class="log-btn">Register</button>
+                    <div class="logreg-link">
+                        <p>Already have an account yet? <a href="#" class="login-link">login here</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="media-options">
+            <a href="#">
+                <i class="bx bxl-google"></i>
+                <span>Login with Google</span>
+            </a>
+            <a href="#">
+                <i class="bx bxl-facebook-circle"></i>
+                <span>Login with Facebook</span>
+            </a>
+        </div>
+
+
+    </div>
+
+    <!-- Home -->
     <section class="home" id="home">
         <div class="home-text container">
-            <div class="home-title">
+            <h2 class="home-title">
                 The Venom Blog
-            </div>
+            </h2>
             <span class="home-subtitle">
                 Your great source of content
             </span>
@@ -186,6 +276,7 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- Link to JS -->
     <Script src="js/main.js"></Script>
+
 </body>
 
 </html>
