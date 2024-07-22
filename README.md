@@ -67,13 +67,13 @@ This project is a responsive blog website featuring a modern design with login a
 1. **Clone the Repository**:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/HamzaRadaideh/BlogWebsite.git
     ```
 
 2. **Navigate to the Project Directory**:
 
     ```bash
-    cd <project-directory>
+    cd BlogWebsite
     ```
 
 3. **Open `index.html` in a Web Browser** to view the home page.
