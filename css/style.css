@@ -514,8 +514,15 @@ header.shadow .logo {
     -o-border-radius: 50%;
 }
 
+.profile-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color);
+}
+
 .profile-name {
-    font-size: 0.82rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
